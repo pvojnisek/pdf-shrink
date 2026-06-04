@@ -1,0 +1,19 @@
+[Unit]
+Description=PDF Shrink (Apple Markup / PencilKit stripper + image downsampler)
+After=network.target
+
+[Service]
+Type=simple
+# Telepítés: másold a linux binárist ide, és hozd létre a mappát:
+#   sudo mkdir -p /opt/pdf-shrink && sudo cp pdf-shrink-linux-amd64 /opt/pdf-shrink/pdf-shrink
+WorkingDirectory=/opt/pdf-shrink
+ExecStart=/opt/pdf-shrink/pdf-shrink
+Environment=PORT=8080
+Restart=on-failure
+RestartSec=3
+# Enyhe izoláció (a WorkingDirectory-n belül írhat: outputs/)
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

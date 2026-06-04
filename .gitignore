@@ -1,0 +1,11 @@
+# Lefordított binárisok (build artifact — ne kerüljön repóba)
+/pdf-shrink
+/pdf-shrink-linux-amd64
+/pdf-shrink-*
+*.exe
+
+# Futásidejű kimenetek (a szerver hozza létre)
+/outputs/
+
+# macOS
+.DS_Store
